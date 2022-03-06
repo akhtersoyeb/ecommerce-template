@@ -7,6 +7,7 @@ import { ShoppingCartIcon } from '@heroicons/react/outline'
 import ProductCard from '../../components/ProductCard'
 import Navbar from '../../components/Navbar'
 import PaymentSuccessModal from '../../components/PaymentSuccessModal'
+import PaymentCancelModal from '../../components/PaymentCancelModal'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -111,12 +112,14 @@ function classNames(...classes) {
 
 export default function Product({ status }) {
   // I ran twice here. I don't know why
-  console.log(status)
 
   return (
     <>
       {status && status === 'success' && (
         <PaymentSuccessModal />
+      )}
+      {status && status === 'cancel' && (
+        <PaymentCancelModal />
       )}
 
       <Navbar />

@@ -38,6 +38,7 @@ const wishlistProducts = [
     // More products...
 ]
 
+
 const categories = [
     { name: 'Web Themes & Templates', href: '/items' },
     { name: 'Wordpress', href: '/items' },
@@ -236,7 +237,7 @@ export default function Navbar() {
                                             ))}
                                             {/* My Wishlist Button */}
                                             <a
-                                                className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                                                className='text-gray-300 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                                                 onClick={() => setOpen(true)}
                                             >
                                                 Wishlist
@@ -384,7 +385,7 @@ export default function Navbar() {
                                 <Disclosure
                                     as="button"
                                     onClick={() => setOpen(true)}
-                                    className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                                    className='text-gray-300 cursor-pointer hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                                 >
                                     Wishlist
                                 </Disclosure>

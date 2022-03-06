@@ -62,6 +62,44 @@ const similarProducts = [
   },
 ]
 
+const customerReviews = [
+  {
+    id: '1',
+    username: 'John Doe',
+    rating: '4',
+    date: '17th June, 2022',
+    body: 'Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.'
+  },
+  {
+    id: '2',
+    username: 'John Doe',
+    rating: '4',
+    date: '17th June, 2022',
+    body: 'Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.'
+  },
+  {
+    id: '3',
+    username: 'John Doe',
+    rating: '4',
+    date: '17th June, 2022',
+    body: 'Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.'
+  },
+  {
+    id: '4',
+    username: 'John Doe',
+    rating: '4',
+    date: '17th June, 2022',
+    body: 'Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.'
+  },
+  {
+    id: '5',
+    username: 'John Doe',
+    rating: '4',
+    date: '17th June, 2022',
+    body: 'Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft beer.'
+  },
+]
+
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
 function classNames(...classes) {
@@ -216,7 +254,7 @@ export default function Product() {
             </div>
           </div>
         </div>
-        
+
         {/* Similar Items */}
         <div className="container mx-auto max-w-2xl lg:max-w-7xl pb-10 px-4 sm:px-6 lg:pb-16 lg:px-8">
           <h2 className="text-3xl text-white">Similar Items</h2>
@@ -226,10 +264,52 @@ export default function Product() {
             ))}
           </div>
         </div>
-      
-      
+
+        {/* Reviews */}
+        <div className="container mx-auto max-w-2xl lg:max-w-7xl pb-10 px-4 sm:px-6 lg:pb-16 lg:px-8">
+          <h2 className="text-3xl text-white">Reviews</h2>
+
+          <div className="divide-y divide-slate-400">
+
+            {customerReviews.map((review) => (
+              <div key={review.id} className="py-6 flex flex-wrap md:flex-nowrap">
+                <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                  <span className=" text-slate-200 font-bold">{review.username}</span>
+                  <span className="mt-1 text-slate-400 text-sm">{review.date}</span>
+                </div>
+                <div className="md:flex-grow">
+                  <div className="flex mb-4">
+                    <span className="flex items-center">
+                      <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6 text-indigo-500" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                      <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6 text-indigo-500" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                      <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6 text-indigo-500" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                      <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6 text-indigo-500" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                      <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-6 h-6 text-indigo-500" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                      </svg>
+                      <span className="text-slate-200 ml-3">{review.rating} Star Rating</span>
+                    </span>
+
+                  </div>
+                  <p className="leading-relaxed text-slate-400">{review.body}</p>
+                </div>
+              </div>
+            ))}
+
+
+          </div>
+        </div>
+
       </div>
-      
+
     </div>
   )
 }

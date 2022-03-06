@@ -1,9 +1,10 @@
 
 
 import { StarIcon } from '@heroicons/react/solid'
-import { HeartIcon } from '@heroicons/react/outline'
+import { ShoppingCartIcon } from '@heroicons/react/outline'
 
-import ProductCard from '../components/ProductCard'
+import ProductCard from '../../components/ProductCard'
+import Navbar from '../../components/Navbar'
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -107,8 +108,10 @@ function classNames(...classes) {
 }
 
 export default function Product() {
-
+  // I ran twice. I don't know why
   return (
+    <>
+    <Navbar />
     <div className="bg-slate-900">
       <div className="pt-6">
 
@@ -181,7 +184,7 @@ export default function Product() {
         <div className="max-w-2xl mx-auto  py-10 px-4 sm:px-6 lg:max-w-7xl lg:py-16 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
           <div className="flex items-center justify-between lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">{product.name}</h1>
-            <HeartIcon className="h-8 w-8 text-slate-400 flex-shrink-0" />
+            <ShoppingCartIcon className="h-6 w-6 text-slate-400 flex-shrink-0 cursor-pointer" />
           </div>
 
           {/* Options */}
@@ -311,5 +314,6 @@ export default function Product() {
       </div>
 
     </div>
+    </>
   )
 }

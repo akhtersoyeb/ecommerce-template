@@ -1,3 +1,4 @@
+
 import OrderCard from "../components/OrderCard"
 import Navbar from "../components/Navbar"
 
@@ -41,8 +42,10 @@ const orders = [
 ]
 
 export default function Orders() {
+
     return (
         <>
+            
             <Navbar />
             <div className="bg-slate-900 min-h-screen">
                 {/* Orders */}

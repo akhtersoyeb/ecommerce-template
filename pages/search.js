@@ -6,6 +6,7 @@ import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon } from '@heroicons
 
 import ProductCard from '../components/ProductCard'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const products = [
     {
@@ -396,6 +397,7 @@ export default function search() {
                     </main>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

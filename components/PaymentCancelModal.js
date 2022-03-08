@@ -5,7 +5,6 @@ import { ExclamationIcon } from '@heroicons/react/outline'
 export default function PaymentCancelModal() {
   const [open, setOpen] = useState(true)
 
-
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="fixed z-10 inset-0 overflow-y-auto"  onClose={setOpen}>

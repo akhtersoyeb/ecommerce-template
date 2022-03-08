@@ -8,12 +8,11 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'
 
 const navigation = [
-    { name: 'Home', href: '/', current: false },
-    { name: 'Explore', href: '/items', current: false },
+    { name: 'Explore', href: '/', current: false },
 ]
 
 
-const wishlistProducts = [
+const cartProducts = [
     {
         id: 1,
         name: 'Throwback Hip Bag',
@@ -107,7 +106,7 @@ export default function Navbar() {
                                             <div className="mt-8">
                                                 <div className="flow-root">
                                                     <ul role="list" className="-my-6 divide-y divide-gray-200">
-                                                        {wishlistProducts.map((product) => (
+                                                        {cartProducts.map((product) => (
                                                             <li key={product.id} className="flex py-6">
                                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                     <img
@@ -235,12 +234,12 @@ export default function Navbar() {
                                                     </a>
                                                 </Link>
                                             ))}
-                                            {/* My Wishlist Button */}
+                                            {/* My Cart Button */}
                                             <a
-                                                className='text-gray-300 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                                                className='text-gray-300 whitespace-nowrap cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                                                 onClick={() => setOpen(true)}
                                             >
-                                                Wishlist
+                                                My Cart
                                             </a>
                                             {/* Categories dropdown */}
                                             <Menu as="div" className="ml-3 relative">
@@ -381,13 +380,13 @@ export default function Navbar() {
                                     </Disclosure.Button>
                                 ))}
 
-                                {/* My Wishlist Button */}
+                                {/* My Cart Button */}
                                 <Disclosure
                                     as="button"
                                     onClick={() => setOpen(true)}
-                                    className='text-gray-300 cursor-pointer hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                                    className='text-gray-300 whitespace-nowrap cursor-pointer hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                                 >
-                                    Wishlist
+                                    My Cart
                                 </Disclosure>
                                 {/* Collapsable categories button */}
                                 <Disclosure as="div" className="">

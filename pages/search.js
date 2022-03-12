@@ -129,7 +129,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function search() {
+export default function Search() {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
     return (

@@ -164,7 +164,7 @@ export default function Home() {
         {/* SPECIAL OFFER SECTION */}
         <div className="container mx-auto max-w-2xl lg:max-w-7xl pb-10 px-4 sm:px-6 lg:pb-16 lg:px-8">
           <div className="flex flex-row items-center justify-between">
-            <h2 className="text-2xl font-extrabold text-white">Celebrating Women's Day</h2>
+            <h2 className="text-2xl font-extrabold text-white">Celebrating Women&apos;s Day</h2>
             <a href="#" className="text-sm text-indigo-500 hover:text-indigo-600">Show More</a>
           </div>
           <div className="grid grid-cols-1 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">

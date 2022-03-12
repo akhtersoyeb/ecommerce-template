@@ -5,9 +5,9 @@ export default function Login() {
     return (
         <>
             <main>
-                <section className="absolute w-full h-full">
+                <section className="absolute bg-slate-900 w-full h-full">
                     
-                    <div className="container bg-slate-900 mx-auto px-4 h-full">
+                    <div className="container  mx-auto px-4 h-full">
                         <div className="flex content-center items-center justify-center h-full">
                             <div className="w-full lg:w-4/12 px-4">
                                 <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0">
@@ -19,7 +19,7 @@ export default function Login() {
                                         </div>
                                         <div className="btn-wrapper text-center">
                                             <button
-                                                className="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
+                                                className="bg-white active:bg-gray-100 text-gray-800 px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
                                                 type="button"
                                                 style={{ transition: "all .15s ease" }}
                                             >
@@ -31,7 +31,7 @@ export default function Login() {
                                                 Github
                                             </button>
                                             <button
-                                                className="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
+                                                className="bg-white active:bg-gray-100 text-gray-800 px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
                                                 type="button"
                                                 style={{ transition: "all .15s ease" }}
                                             >

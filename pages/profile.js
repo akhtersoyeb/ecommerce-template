@@ -26,7 +26,7 @@ export default function Profile() {
                                 </div>
                                 <div className="bg-slate-800 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-200">Username</dt>
-                                    <dd className="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2">margotd</dd>
+                                    <dd className="mt-1 text-sm text-gray-400 sm:mt-0 sm:col-span-2 flex items-center justify-between"><span>margotd </span><PencilIcon className='w-5 h-5 text-gray-400' /></dd>
                                 </div>
                                 <div className="bg-slate-800 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                     <dt className="text-sm font-medium text-gray-200">Email address</dt>

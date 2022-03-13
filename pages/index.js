@@ -4,33 +4,34 @@ import { Carousel } from 'antd';
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 import Footer  from "../components/Footer";
+import Link from "next/link";
 
 const discountedProducts = [
   {
     id: '1',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '2',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '3',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '4',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
@@ -40,28 +41,28 @@ const specialOfferProducts = [
   {
     id: '1',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '2',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '3',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '4',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
@@ -71,28 +72,28 @@ const latestProducts = [
   {
       id: '1',
       name: 'Basic Tee',
-      href: '#',
+      href: '/product/demo-product',
       image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
       price: '$35',
   },
   {
       id: '2',
       name: 'Basic Tee',
-      href: '#',
+      href: '/product/demo-product',
       image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
       price: '$35',
   },
   {
       id: '3',
       name: 'Basic Tee',
-      href: '#',
+      href: '/product/demo-product',
       image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
       price: '$35',
   },
   {
       id: '4',
       name: 'Basic Tee',
-      href: '#',
+      href: '/product/demo-product',
       image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
       price: '$35',
   },
@@ -104,21 +105,21 @@ const collections = [
     description: 'Work from home accessories',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
     imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
-    href: '#',
+    href: 'category/desk-and-office',
   },
   {
     name: 'Self-Improvement',
     description: 'Journals and note-taking',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
     imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
-    href: '#',
+    href: 'category/self-improvement',
   },
   {
     name: 'Travel',
     description: 'Daily commute essentials',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
     imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-    href: '#',
+    href: 'category/travel',
   },
 ]
 
@@ -191,10 +192,12 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="mt-6 text-sm text-white">
-                      <a href={item.href}>
+                      <Link href={item.href}>
+                        <a>
                         <span className="absolute inset-0" />
                         {item.name}
-                      </a>
+                        </a>
+                      </Link>
                     </h3>
                     <p className="text-base font-semibold text-slate-400">{item.description}</p>
                   </div>

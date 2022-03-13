@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProductCard({ name, href, imageSrc, price }) {
     return (
         <div className="group relative bg-slate-800 duration-150 rounded-md overflow-hidden hover:lg:rounded-none hover:lg:shadow-lg hover:lg:scale-105">
@@ -11,10 +13,12 @@ export default function ProductCard({ name, href, imageSrc, price }) {
             <div className="mt-4 flex justify-between px-3">
                 <div>
                     <h3 className="text-sm font-bold text-slate-200 group-hover:text-slate-100">
-                        <a href={href}>
+                        <Link href={href}>
+                            <a>
                             <span aria-hidden="true" className="absolute inset-0" />
                             {name}
-                        </a>
+                            </a>
+                        </Link>
                     </h3>
                     <div className="flex my-4">
                         <span className="flex items-center">

@@ -6,7 +6,7 @@ const orders = [
     {
         id: '1',
         productName: 'Basic Tee',
-        productUrl: '#',
+        productUrl: '/product/demo-product/',
         category: 'Fashion',
         image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
         price: '$35',
@@ -15,7 +15,7 @@ const orders = [
     {
         id: '2',
         productName: 'Basic Tee',
-        productUrl: '#',
+        productUrl: '/product/demo-product/',
         category: 'Fashion',
         image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
         price: '$35',
@@ -24,7 +24,7 @@ const orders = [
     {
         id: '3',
         productName: 'Basic Tee',
-        productUrl: '#',
+        productUrl: '/product/demo-product/',
         category: 'Fashion',
         image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
         price: '$35',
@@ -33,7 +33,7 @@ const orders = [
     {
         id: '4',
         productName: 'Basic Tee',
-        productUrl: '#',
+        productUrl: '/product/demo-product/',
         category: 'Fashion',
         image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
         price: '$35',

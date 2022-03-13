@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import { ClipboardListIcon } from "@heroicons/react/outline"
 import RatingsModal from './RatingsModal'
+import Link from 'next/link'
 
 export default function OrderCard({ id, image, productName, productUrl, category, status, price }) {
     const [openRatingModal, setOpenRatingModal] = useState(false)
@@ -28,7 +29,7 @@ export default function OrderCard({ id, image, productName, productUrl, category
                     <div>
                         <div className="flex justify-between text-base font-medium text-slate-100">
                             <h3>
-                                <a href={productUrl}> {productName} </a>
+                                <Link href={productUrl}><a> {productName} </a></Link>
                             </h3>
                             <ClipboardListIcon onClick={() => setOpenRatingModal(true)} className="h-5 w-5 text-slate-400 hover:text-white cursor-pointer" />
 

@@ -39,28 +39,28 @@ const similarProducts = [
   {
     id: '1',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '2',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '3',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
   {
     id: '4',
     name: 'Basic Tee',
-    href: '#',
+    href: '/product/demo-product',
     image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     price: '$35',
   },
@@ -331,7 +331,7 @@ export default function Product({ status }) {
 
 
 export async function getServerSideProps({ query }) {
-  console.log(query)
+  // console.log(query)
   const status = query.status || ''
 
   // Pass data to the page via props

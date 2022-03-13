@@ -39,16 +39,15 @@ const cartProducts = [
 
 
 const categories = [
-    { name: 'Web Themes & Templates', href: '/items' },
-    { name: 'Wordpress', href: '/items' },
-    { name: 'Mobile App', href: '/items' },
-    { name: 'UI Design', href: '/items' },
-    { name: 'HTML-CSS', href: '/items' },
-    { name: 'JavaScript', href: '/items' },
-    { name: 'Code Snippets', href: '/items' },
-    { name: 'Frontend', href: '/items' },
-    { name: 'Backend', href: '/items' },
-    { name: 'Full Stack', href: '/items' },
+    { name: 'Fashion', href: '/category/fashion' },
+    { name: 'Mobiles', href: '/category/mobiles' },
+    { name: 'Electronics', href: '/category/electronics' },
+    { name: 'Home', href: '/category/home' },
+    { name: 'Travel', href: '/category/travel' },
+    { name: 'Appliances', href: '/category/appliances' },
+    { name: 'Furniture', href: '/category/furniture' },
+    { name: 'Toys', href: '/category/toys' },
+    { name: 'Grocery', href: '/category/grocery' },
 ]
 
 function classNames(...classes) {
@@ -57,6 +56,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const [open, setOpen] = useState(false)
+    const [query, setQuery] = useState('')
+
 
     return (
         <>
@@ -211,14 +212,16 @@ export default function Navbar() {
                                     <div className="hidden sm:block sm:ml-6">
                                         <div className="flex space-x-4 items-center">
                                             {/* Search bar */}
-                                            <div className="py-2 flex">
-                                                <div className="relative mr-3 md:mr-0">
-                                                    <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                                        <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
+                                            <form action={`/search?`}>
+                                                <div className="py-2 flex">
+                                                    <div className="relative mr-3 md:mr-0">
+                                                        <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                            <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
+                                                        </div>
+                                                        <input type="text" name='query' value={query} onChange={(e) => setQuery(e.target.value)} id="searchField" className="block p-2 pl-10 w-full rounded-lg border  sm:text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
                                                     </div>
-                                                    <input type="text" id="searchField" className="block p-2 pl-10 w-full rounded-lg border  sm:text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
                                                 </div>
-                                            </div>
+                                            </form>
                                             {/* End of search bar */}
 
                                             {navigation.map((item) => (
@@ -261,12 +264,14 @@ export default function Navbar() {
                                                         {categories.map((category) => (
                                                             <Menu.Item key={category.name}>
                                                                 {({ active }) => (
-                                                                    <a
-                                                                        href={category.href}
-                                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                                    >
-                                                                        {category.name}
-                                                                    </a>
+                                                                    <Link href={category.href}>
+                                                                        <a
+
+                                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                                        >
+                                                                            {category.name}
+                                                                        </a>
+                                                                    </Link>
                                                                 )}
                                                             </Menu.Item>
                                                         ))}
@@ -314,28 +319,17 @@ export default function Navbar() {
                                                 </Menu.Item>
                                                 <Menu.Item>
                                                     {({ active }) => (
-                                                        <Link href="/dashboard">
+                                                        <Link href="/orders">
                                                             <a
 
                                                                 className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                             >
-                                                                Dashboard
+                                                                My Orders
                                                             </a>
                                                         </Link>
                                                     )}
                                                 </Menu.Item>
-                                                <Menu.Item>
-                                                    {({ active }) => (
-                                                        <Link href="/create-product">
-                                                            <a
-
-                                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                            >
-                                                                Add Product
-                                                            </a>
-                                                        </Link>
-                                                    )}
-                                                </Menu.Item>
+                                                
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <a
@@ -356,14 +350,16 @@ export default function Navbar() {
                         <Disclosure.Panel className="sm:hidden">
                             <div className="px-2 pt-2 pb-3 space-y-1">
                                 {/* Search bar */}
-                                <div className="py-2 flex">
-                                    <div className="relative mr-3 md:mr-0 w-full">
-                                        <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                            <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
+                                <form action={`/search\?query=${query}`}>
+                                    <div className="py-2 flex">
+                                        <div className="relative mr-3 md:mr-0 w-full">
+                                            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                                <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
+                                            </div>
+                                            <input type="text" name='query' value={query} onChange={(e) => setQuery(e.target.value)} id="searchField" className="block p-2 pl-10 w-full rounded-lg border  sm:text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
                                         </div>
-                                        <input type="text" id="searchField" className="block p-2 pl-10 w-full rounded-lg border  sm:text-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
                                     </div>
-                                </div>
+                                </form>
                                 {/* End of search bar */}
                                 {navigation.map((item) => (
                                     <Disclosure.Button
@@ -409,12 +405,14 @@ export default function Navbar() {
                                                     {/* {section.options.map((option, optionIdx) => ( */}
                                                     <div className="flex flex-col">
                                                         {categories.map((category) => (
-                                                            <a
+                                                            <Link
                                                                 key={category.name}
-                                                                href={category.href}
-                                                                className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium'
-                                                            >{category.name}</a>
+                                                                href={category.href} >
+                                                                <a
 
+                                                                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium'
+                                                                >{category.name}</a>
+                                                            </Link>
                                                         ))}
                                                     </div>
                                                     {/* ))} */}
